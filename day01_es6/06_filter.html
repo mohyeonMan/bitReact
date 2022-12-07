@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const arr = [10,20,30,40,50,60]
+        const newArr = arr.filter(item => item>30);//[40, 50, 60]
+        console.log(newArr)
+
+        const newArr2 = newArr.filter(item => item===40); //[40]
+        console.log(newArr2)
+        const newArr3 = arr.filter(item => item!==40); //[10, 20, 30, 50, 60]
+        console.log(newArr3)
+
+
+        const data = [
+            {id: 1, name:'모현면', age:11},
+            {id: 2, name:'모현읍', age:22},
+            {id: 3, name:'모현맨', age:33}
+        ]
+
+        const data1 = data.filter(item => item.name==='모현읍')
+        console.log(data1);
+        const data2 = data.filter(item => item.id!==2)
+        console.log(data2)
+    </script>
+
+</body>
+</html>
+
+<!-- 
+filter도 map함수와 마찬가지로 콜백함수를 인자로 받는데 모든 원소를 한 번씩 돌리면서 
+콜백함수의 몸체 부분에서 true를 반환하는 원소들만 걸러준 결과 배열
+
+[형식]
+const newArr = arr.filter( 현재값 => 조건 )
+
+ -->

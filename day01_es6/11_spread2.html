@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = [
+            {id: 1, name:'모현면', age:11},
+            {id: 2, name:'모현읍', age:22},
+            {id: 3, name:'모현특별시', age:33},
+            {id: 4, name:'모현공화국', age:44},
+            {id: 5, name:'모현맨', age:55}
+        ]
+        const data1 = [...data]
+        console.log(data1)
+
+        //추가
+        const data2 = [...data, {id: 6, name: '엉덩이', age : 20}]
+        console.log(data2)
+
+        //문제 id 4번의 name, age 변경.
+        const data3 = data.map((item,index)=>{
+            if(item.id === 4){
+                return {...item,name:'모현민국',age: 66}        
+            }else{
+                return item
+            }
+        })
+        console.log(data3)
+
+        const data4 = data.map(item => item.id===4? {...item, name:'모현공화국',age: 44}:item)
+        console.log(data4)
+    </script>
+</body>
+</html>
